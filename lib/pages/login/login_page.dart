@@ -4,6 +4,7 @@ import 'package:bersihkebun/models/user.dart';
 import 'package:bersihkebun/pages/login/login_presenter.dart';
 
 class LoginPage extends StatefulWidget {
+  static const String id = "login_page";
   @override
   _LoginPageState createState() => new _LoginPageState();
 }

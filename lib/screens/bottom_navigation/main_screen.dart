@@ -59,7 +59,7 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: AnimatedContainer(
-        resizeToAvoidBottomInset: false,
+        // resizeToAvoidBottomPadding: false,
         duration: Duration(milliseconds: 10),
         height:
             _isVisible ? MediaQuery.of(context).viewPadding.bottom + 70 : 0.0,
