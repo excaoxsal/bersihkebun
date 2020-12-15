@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sqlite/data/database-helper.dart';
-import 'package:flutter_sqlite/models/user.dart';
+import 'package:bersihkebun/data/database-helper.dart';
+import 'package:bersihkebun/models/user.dart';
 
 class RegisterPage extends StatefulWidget {
   @override

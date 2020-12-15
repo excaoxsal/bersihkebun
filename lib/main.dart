@@ -1,17 +1,30 @@
+import 'package:bersihkebun/screens/bottom_navigation/home_screen.dart';
 import 'package:flutter/material.dart';
-import './get_started.dart';
-import './login.dart';
+import 'package:bersihkebun/pages/home_page.dart';
+import 'package:bersihkebun/pages/login/login_page.dart';
+import 'package:bersihkebun/pages/login/register.dart';
+import 'package:bersihkebun/screens/bottom_navigation/main_screen.dart';
+import 'package:bersihkebun/screens/login_screen.dart';
+import 'package:bersihkebun/screens/splash_screen.dart';
+import 'package:bersihkebun/screens/verification_screen.dart';
 
 void main() => runApp(MyApp());
 
+final routes = {
+  '/login': (BuildContext context) => new LoginPage(),
+  '/home': (BuildContext context) => new HomeScreen(),
+  '/register': (BuildContext context) => new RegisterPage(),
+  '/': (BuildContext context) => new LoginPage(),
+};
+
 class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      routes: {
-        '/': (context) => Login()
-      },
-    );
-  }
+ 
+ @override
+ Widget build(BuildContext context){
+   return new MaterialApp(
+     title: 'Bersih Kebun',
+     theme: new ThemeData(primarySwatch: Colors.teal),
+     routes: routes,
+   );
+ }
 }

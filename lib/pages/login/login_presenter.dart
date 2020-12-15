@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_sqlite/data/rest-data.dart';
-import 'package:flutter_sqlite/models/user.dart';
+import 'package:bersihkebun/data/rest-data.dart';
+import 'package:bersihkebun/models/user.dart';
 
 abstract class LoginPageContract{
   void onLoginSuccess(User user);

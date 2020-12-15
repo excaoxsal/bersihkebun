@@ -1,10 +1,10 @@
 import 'dart:async';
-import 'package:flutter_sqlite/models/user.dart';
-import 'package:flutter_sqlite/data/database-helper.dart';
+import 'package:bersihkebun/models/user.dart';
+import 'package:bersihkebun/data/database-helper.dart';
 
 class RestData {
-  static final BASE_URL = "";
-  static final LOGIN_URL = BASE_URL + "/";
+  static final Base_Url = "";
+  static final Login_Url = Base_Url + "/";
 
   Future<User> login( String username, String password) async {
     String flagLogged = "logged";
