@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:bersihkebun/widgets/grab_icon_menu.dart';
 import 'package:bersihkebun/widgets/grab_more_icon_menu.dart';
+import 'package:bersihkebun/pages/form/bersihtaman.dart';
 
 import '../../constant.dart';
 
@@ -46,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         15.0 + MediaQuery.of(context).viewPadding.top),
                     child: Center(
                       child: Text(
-                        "Good Afternoon",
+                        "Selamat Datang",
                         style: kGrabWhiteRegularSmall,
                       ),
                     ),
@@ -64,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "OVO Balance",
+                                "Pilih Layanan",
                                 style:
                                     kGrabBlackBoldMedium.copyWith(fontSize: 20),
                               ),
@@ -101,17 +102,19 @@ class _HomeScreenState extends State<HomeScreen> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: <Widget>[
-                              GrabIconMenu(
+                              RaisedButton(
+                              child: GrabIconMenu(
                                 image: "assets/images/pay/pay.png",
                                 title: "Pay",
+                              ), onPressed: () {  },
+                                color: Colors.white,
                               ),
-                              GrabIconMenu(
+                              RaisedButton(
+                              child: GrabIconMenu(
                                 image: "assets/images/pay/topu.png",
-                                title: "Top Up",
-                              ),
-                              GrabIconMenu(
-                                image: "assets/images/pay/reward.png",
-                                title: "Reward",
+                                title: "Kode Promo",
+                              ), onPressed: () {  },
+                                color: Colors.white,
                               ),
                             ],
                           )
@@ -131,43 +134,66 @@ class _HomeScreenState extends State<HomeScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
-                  GrabIconMenu(
+                  RaisedButton(
+                  child: GrabIconMenu(
                     image: "assets/images/feature/car.png",
-                    title: "Car",
+                    title: "Bersih Kebun",
+                  ), onPressed: () { Navigator.of(context).pushNamed('/form'); },
+                    color: Colors.white,
+
                   ),
-                  GrabIconMenu(
-                    image: "assets/images/feature/bike.png",
-                    title: "Bike",
+                  RaisedButton(
+                    child: GrabIconMenu(
+                      image: "assets/images/feature/car.png",
+                      title: "Bersih Halaman",
+                    ), onPressed: () { Navigator.of(context).pushNamed('/form'); },
+
+                    color: Colors.white,
                   ),
-                  GrabIconMenu(
-                    image: "assets/images/feature/food.png",
-                    title: "Food",
-                  ),
-                  GrabIconMenu(
-                    image: "assets/images/feature/delivery.png",
-                    title: "Delivery",
-                  ),
+
+
+
+
                 ],
               ),
+
               SizedBox(height: 15),
+
+            ],
+          ),
+        ),
+        Container(
+          padding: EdgeInsets.all(15),
+          child: Column(
+            children: <Widget>[
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
-                  GrabIconMenu(
-                    image: "assets/images/feature/rent.png",
-                    title: "Rent",
+                  RaisedButton(
+                    child: GrabIconMenu(
+                      image: "assets/images/feature/car.png",
+                      title: "Bersih Taman",
+                    ), onPressed: () { Navigator.of(context).pushNamed('/form'); },
+                    color: Colors.white,
+
                   ),
-                  GrabIconMenu(
-                    image: "assets/images/feature/giftcard.png",
-                    title: "Gift Cards",
+                  RaisedButton(
+                    child: GrabIconMenu(
+                      image: "assets/images/feature/car.png",
+                      title: "Bersih Jalan",
+                    ), onPressed: () { Navigator.of(context).pushNamed('/form'); },
+                    color: Colors.white,
+
                   ),
-                  GrabIconMenu(
-                    image: "assets/images/feature/subscription.png",
-                    title: "Subscription",
-                  ),
-                  GrabMoreIconMenu(),
+
+
+
+
                 ],
               ),
+
+              SizedBox(height: 20),
+
             ],
           ),
         ),
@@ -176,67 +202,7 @@ class _HomeScreenState extends State<HomeScreen> {
           height: 8,
           color: Colors.grey[300],
         ),
-        GridView.count(
-          padding: EdgeInsets.all(5),
-          childAspectRatio: .75,
-          physics: NeverScrollableScrollPhysics(),
-          shrinkWrap: true,
-          crossAxisCount: 2,
-          children: List.generate(
-            10,
-            (index) {
-              return Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Material(
-                  borderRadius: BorderRadiusDirectional.circular(15),
-                  elevation: 5,
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 0.4,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadiusDirectional.circular(15)),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        ClipRRect(
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(10),
-                            topRight: Radius.circular(10),
-                          ),
-                          child: Image.network(
-                            "https://image.freepik.com/free-vector/square-food-banner-with-photo_23-2148118766.jpg",
-                            fit: BoxFit.cover,
-                            // height: 150,
-                          ),
-                        ),
-                        SizedBox(height: 5),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            child: Text("Article Title Here",
-                                style: kGrabBlackRegularSmall.copyWith(
-                                    fontSize: 15)),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                          child: Row(
-                            children: <Widget>[
-                              Icon(Icons.calendar_today, size: 15,),
-                              SizedBox(width: 5),
-                              Text("1 min read",
-                                  style: kGrabBlackRegularSmall.copyWith(
-                                      fontSize: 15)),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              );
-            },
-          ),
-        ),
+
       ],
     );
   }

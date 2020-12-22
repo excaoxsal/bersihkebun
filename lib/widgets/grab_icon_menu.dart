@@ -1,3 +1,4 @@
+import 'package:bersihkebun/main.dart';
 import 'package:flutter/material.dart';
 import 'package:bersihkebun/constant.dart';
 
@@ -13,17 +14,16 @@ class GrabIconMenu extends StatelessWidget {
   final String title;
   final String image;
   final double size;
-
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Image(
-          height: size,
-          image: AssetImage(image),
-        ),
-        SizedBox(height: 5),
-        Text(title, style: kGrabBlackRegularSmall.copyWith(fontSize: 15)),
+          Image(
+            height: size,
+            image: AssetImage(image),
+          ),
+            SizedBox(height: 5,),
+            Text(title, style: kGrabBlackRegularSmall.copyWith(fontSize:15)),
       ],
     );
   }

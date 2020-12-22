@@ -3,6 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:bersihkebun/constant.dart';
 import 'package:bersihkebun/screens/bottom_navigation/home_screen.dart';
+import 'package:bersihkebun/pages/form/bersihtaman.dart';
 import 'package:bersihkebun/widgets/grab_bottom_navigation_item.dart';
 
 class MainScreen extends StatefulWidget {
@@ -17,18 +18,7 @@ class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
   List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
-    SafeArea(
-      child: Text("Activity"),
-    ),
-    SafeArea(
-      child: Text("Payment"),
-    ),
-    SafeArea(
-      child: Text("Inbox"),
-    ),
-    SafeArea(
-      child: Text("Account"),
-    ),
+
   ];
 
   bool _isVisible = true;
@@ -82,49 +72,10 @@ class _MainScreenState extends State<MainScreen> {
                     isActive: _selectedIndex == 0,
                   ),
                 ),
-                Expanded(
-                  child: GrabBottomNavigationItem(
-                    icon: FontAwesomeIcons.receipt,
-                    title: "Acivity",
-                    onTap: () {
-                      _selectedIndex = 1;
-                      setState(() {});
-                    },
-                    isActive: _selectedIndex == 1,
-                  ),
-                ),
-                Expanded(
-                  child: GrabBottomNavigationItem(
-                    icon: FontAwesomeIcons.wallet,
-                    title: "Payment",
-                    onTap: () {
-                      _selectedIndex = 2;
-                      setState(() {});
-                    },
-                    isActive: _selectedIndex == 2,
-                  ),
-                ),
-                Expanded(
-                  child: GrabBottomNavigationItem(
-                    icon: FontAwesomeIcons.inbox,
-                    title: "Inbox",
-                    onTap: () {
-                      _selectedIndex = 3;
-                      setState(() {});
-                    },
-                    isActive: _selectedIndex == 3,
-                  ),
-                ),
-                GrabBottomNavigationItem(
-                  icon: FontAwesomeIcons.userCircle,
-                  iconActive: FontAwesomeIcons.solidUserCircle,
-                  title: "Account",
-                  onTap: () {
-                    _selectedIndex = 4;
-                    setState(() {});
-                  },
-                  isActive: _selectedIndex == 4,
-                ),
+
+
+
+
               ],
             ),
           ),
