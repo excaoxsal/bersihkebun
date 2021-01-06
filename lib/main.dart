@@ -8,6 +8,7 @@ import 'package:bersihkebun/screens/login_screen.dart';
 import 'package:bersihkebun/screens/splash_screen.dart';
 import 'package:bersihkebun/screens/verification_screen.dart';
 import 'package:bersihkebun/pages/form/bersihtaman.dart';
+import 'package:bersihkebun/pages/trycontact/home.dart';
 
 
 void main() => runApp(MyApp());
@@ -18,7 +19,6 @@ final routes = {
   '/register': (BuildContext context) => new RegisterPage(),
   '/': (BuildContext context) => new LoginPage(),
   '/form': (BuildContext context) => new BersihTaman(),
-
 };
 
 class MyApp extends StatelessWidget {

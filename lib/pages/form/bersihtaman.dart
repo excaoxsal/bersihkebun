@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:bersihkebun/data/database-helper.dart';
-import 'package:bersihkebun/models/user.dart';
+import 'package:bersihkebun/models/order.dart';
 
 class BersihTaman extends StatefulWidget {
   @override
@@ -11,13 +11,17 @@ class BersihTaman extends StatefulWidget {
 
 class _BersihTamanPageState  extends State<BersihTaman> {
 
+String _luaslahan, _jenislayanan, _alamat;
+String _ordername = "Bersih Taman", _user = "Exca";
+int _price = 50000;
 
 
   @override
   Widget build(BuildContext context) {
 
     var loginBtn = new RaisedButton(
-        onPressed: (){},
+        // onPressed: () {},
+        onPressed: _submit,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(80.0),
         ),
@@ -38,21 +42,21 @@ class _BersihTamanPageState  extends State<BersihTaman> {
               new Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: new TextFormField(
-
+                  onSaved: (val) => _luaslahan = val,
                   decoration: new InputDecoration(labelText: "Luas Lahan"),
                 ),
               ),
               new Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: new TextFormField(
-
+                  onSaved: (val) => _jenislayanan = val,
                   decoration: new InputDecoration(labelText: "Jenis Pekerjaan"),
                 ),
               ),
               new Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: new TextFormField(
-
+                  onSaved: (val) => _alamat = val,
                   decoration: new InputDecoration(labelText: "Alamat")
                 ),
               ),
@@ -88,6 +92,14 @@ class _BersihTamanPageState  extends State<BersihTaman> {
       ),
     );
   }
+void _submit(){
+    setState(() {
+      var order = new Order( _ordername, _user, _price, _alamat ,_luaslahan, _jenislayanan, _alamat);
+      var db = new DatabaseHelper();
+      db.saveOrder(order);
+      Navigator.of(context).pushNamed("/home");
+    });
 
+}
 
 }

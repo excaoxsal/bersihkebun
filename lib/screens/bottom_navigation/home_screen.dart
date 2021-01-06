@@ -111,7 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               RaisedButton(
                               child: GrabIconMenu(
-                                image: "assets/images/pay/topu.png",
+                                image: "assets/images/newversion/Kode.png",
                                 title: "Kode Promo",
                               ), onPressed: () {  },
                                 color: Colors.white,
@@ -136,7 +136,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: <Widget>[
                   RaisedButton(
                   child: GrabIconMenu(
-                    image: "assets/images/feature/car.png",
+                    image: "assets/images/newversion/Kebun.png",
                     title: "Bersih Kebun",
                   ), onPressed: () { Navigator.of(context).pushNamed('/form'); },
                     color: Colors.white,
@@ -144,7 +144,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   RaisedButton(
                     child: GrabIconMenu(
-                      image: "assets/images/feature/car.png",
+                      image: "assets/images/newversion/Halaman.png",
                       title: "Bersih Halaman",
                     ), onPressed: () { Navigator.of(context).pushNamed('/form'); },
 
@@ -171,7 +171,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: <Widget>[
                   RaisedButton(
                     child: GrabIconMenu(
-                      image: "assets/images/feature/car.png",
+                      image: "assets/images/newversion/Taman.png",
                       title: "Bersih Taman",
                     ), onPressed: () { Navigator.of(context).pushNamed('/form'); },
                     color: Colors.white,
@@ -179,7 +179,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   RaisedButton(
                     child: GrabIconMenu(
-                      image: "assets/images/feature/car.png",
+                      image: "assets/images/newversion/Jalan.png",
                       title: "Bersih Jalan",
                     ), onPressed: () { Navigator.of(context).pushNamed('/form'); },
                     color: Colors.white,

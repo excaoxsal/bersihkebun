@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:bersihkebun/models/order.dart';
 import 'package:bersihkebun/models/user.dart';
 import 'package:path/path.dart';
 import 'dart:async';
@@ -10,10 +11,23 @@ class DatabaseHelper {
   factory DatabaseHelper() => _instance;
 
   static Database _db;
+
+  //table user
   final String tableUser = "User";
   final String columnName = "name";
   final String columnUserName = "username";
   final String columnPassword = "password";
+
+  //table order
+  final String tableOrder = "Order";
+  final String columnOrdername = "ordername";
+  final String columnUser = "user";
+  final String columnAlamat = "alamat";
+  final String columnPrice = "price";
+  final String columnLuasLahan = "luaslahan";
+  final String columnJenisLayanan = "jenislayanan";
+
+
 
   Future<Database> get db async {
     if (_db != null) {
@@ -34,7 +48,14 @@ class DatabaseHelper {
 
   void _onCreate(Database db, int version) async {
     await db.execute(
-        "CREATE TABLE User(id INTEGER PRIMARY KEY, name TEXT, username TEXT, password TEXT, flaglogged TEXT)");
+        "CREATE TABLE User(id INTEGER PRIMARY KEY, name TEXT, username TEXT, password TEXT, flaglogged TEXT)"
+        "CREATE TABLE Order(id INTEGER PRIMARY KEY, ordername TEXT, user TEXT, alamat TEXT, price INTEGER, luaslahan TEXT, jenislayanan TEXT ,flaglogged TEXT"
+    );
+    print("Table is created");
+  }
+  void _onCreateOrder(Database db, int version) async {
+    await db.execute(
+        "CREATE TABLE Order(id INTEGER PRIMARY KEY, ordername TEXT, user TEXT, alamat TEXT, price INTEGER, luaslahan TEXT, jenislayanan TEXT ,flaglogged TEXT)");
     print("Table is created");
   }
 
@@ -47,6 +68,14 @@ class DatabaseHelper {
     print(list);
     return res;
   }
+  Future<int> saveOrder(Order order) async {
+    var dbClient = await db;
+    print(order.ordername);
+    int res = await dbClient.insert("Order", order.toMap());
+    List<Map> list = await dbClient.rawQuery('SELECT * FROM Order');
+    print(list);
+    return res;
+  }
 
   //deletion
   Future<int> deleteUser(User user) async {
@@ -54,6 +83,13 @@ class DatabaseHelper {
     int res = await dbClient.delete("User");
     return res;
   }
+  Future<int> deleteOrder(Order order) async {
+    var dbClient = await db;
+    int res = await dbClient.delete("Order");
+    return res;
+  }
+
+  //selection
   Future<User> selectUser(User user) async{
     print("Select User");
     print(user.username);
@@ -67,6 +103,23 @@ class DatabaseHelper {
     if (maps.length > 0) {
       print("User Exist !!!");
       return user;
+    }else {
+      return null;
+    }
+  }
+  Future<Order> selectOrder(Order order) async{
+    print("Select Order");
+    print(order.ordername);
+    print(order.jenislayanan);
+    var dbClient = await db;
+    List<Map> maps = await dbClient.query(tableOrder,
+        columns: [columnOrdername, columnJenisLayanan],
+        where: "$columnUser = ?",
+        whereArgs: [order.user]);
+    print(maps);
+    if (maps.length > 0) {
+      print("Order Exist !!!");
+      return order;
     }else {
       return null;
     }
