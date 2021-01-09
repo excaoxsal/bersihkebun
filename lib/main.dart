@@ -1,3 +1,6 @@
+import 'package:bersihkebun/pages/form/bersihhalaman.dart';
+import 'package:bersihkebun/pages/form/bersihjalan.dart';
+import 'package:bersihkebun/pages/form/bersihkebun.dart';
 import 'package:bersihkebun/screens/bottom_navigation/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:bersihkebun/pages/home_page.dart';
@@ -18,7 +21,12 @@ final routes = {
   '/home': (BuildContext context) => new MainScreen(),
   '/register': (BuildContext context) => new RegisterPage(),
   '/': (BuildContext context) => new LoginPage(),
-  '/form': (BuildContext context) => new BersihTaman(),
+  '/formtaman': (BuildContext context) => new BersihTaman(),
+  '/formkebun': (BuildContext context) => new BersihKebun(),
+  '/formjalan': (BuildContext context) => new BersihJalan(),
+  '/formhalaman': (BuildContext context) => new BersihHalaman(),
+  '/history': (BuildContext context) => new Home(),
+
 };
 
 class MyApp extends StatelessWidget {

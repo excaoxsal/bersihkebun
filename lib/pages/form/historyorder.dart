@@ -1,8 +1,8 @@
+// import 'package:bersihkebun/pages/trycontact/dbhelper.dart';
 // import 'package:flutter/material.dart';
 // //letak package folder flutter
-// import 'package:cobalagi/ui/entryform.dart';
-// import 'package:cobalagi/models/contact.dart';
-// import 'package:bersihkebun/data/database-helper.dart';
+// import 'package:bersihkebun/data/dbOrder.dart';
+// import 'package:bersihkebun/models/order.dart';
 // import 'package:sqflite/sqflite.dart';
 // //untuk memanggil fungsi yg terdapat di daftar pustaka sqflite
 // import 'dart:async';
@@ -15,7 +15,7 @@
 //
 // class HomeState extends State<Home> {
 //
-//   DbHelper dbHelper = DbHelper();
+//   DatabaseHelper dbHelper = DbHelper();
 //   int count = 0;
 //   List<Contact> contactList;
 //
@@ -27,7 +27,7 @@
 //
 //     return Scaffold(
 //       appBar: AppBar(
-//         title: Text('Daftar Data-Data'),
+//         title: Text('History Pemesanan'),
 //       ),
 //       body: createListView(),
 //       floatingActionButton: FloatingActionButton(

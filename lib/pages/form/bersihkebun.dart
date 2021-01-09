@@ -2,26 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:bersihkebun/data/dbOrder.dart';
 import 'package:bersihkebun/models/order.dart';
 
-class BersihTaman extends StatefulWidget {
+class BersihKebun extends StatefulWidget {
   @override
-  _BersihTamanPageState createState() => new _BersihTamanPageState();
+  _BersihKebunPageState createState() => new _BersihKebunPageState();
 }
 
 
 
-class _BersihTamanPageState  extends State<BersihTaman> {
+class _BersihKebunPageState  extends State<BersihKebun> {
 
-String _luaslahan, _jenislayanan, _alamat;
-String _ordername = "Bersih Taman", _user = "Exca";
-int _price = 50000;
-final formKey = new GlobalKey<FormState>();
+  String _luaslahan, _jenislayanan, _alamat;
+  String _ordername = "Bersih Kebun", _user = "Exca";
+  int _price = 50000;
+  final formKey = new GlobalKey<FormState>();
 
 
   @override
   Widget build(BuildContext context) {
 
     var loginBtn = new RaisedButton(
-        // onPressed: () {},
+      // onPressed: () {},
         onPressed: _submit,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(80.0),
@@ -57,8 +57,8 @@ final formKey = new GlobalKey<FormState>();
               new Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: new TextFormField(
-                  onSaved: (val) => _alamat = val,
-                  decoration: new InputDecoration(labelText: "Alamat")
+                    onSaved: (val) => _alamat = val,
+                    decoration: new InputDecoration(labelText: "Alamat")
                 ),
               ),
               new Padding(
@@ -82,7 +82,7 @@ final formKey = new GlobalKey<FormState>();
 
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text("Bersih Taman"),
+        title: new Text("Bersih Kebun"),
         backgroundColor: Colors.teal[300],
       ),
 
@@ -93,7 +93,7 @@ final formKey = new GlobalKey<FormState>();
       ),
     );
   }
-void _submit(){
+  void _submit(){
     setState(() {
       final form = formKey.currentState;
       form.save();
@@ -103,6 +103,6 @@ void _submit(){
       Navigator.of(context).pushNamed("/home");
     });
 
-}
+  }
 
 }

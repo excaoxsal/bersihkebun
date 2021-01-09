@@ -138,7 +138,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: GrabIconMenu(
                     image: "assets/images/newversion/Kebun.png",
                     title: "Bersih Kebun",
-                  ), onPressed: () { Navigator.of(context).pushNamed('/form'); },
+                  ), onPressed: () { Navigator.of(context).pushNamed('/formkebun'); },
                     color: Colors.white,
 
                   ),
@@ -146,7 +146,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: GrabIconMenu(
                       image: "assets/images/newversion/Halaman.png",
                       title: "Bersih Halaman",
-                    ), onPressed: () { Navigator.of(context).pushNamed('/form'); },
+                    ), onPressed: () { Navigator.of(context).pushNamed('/formhalaman'); },
 
                     color: Colors.white,
                   ),
@@ -173,7 +173,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: GrabIconMenu(
                       image: "assets/images/newversion/Taman.png",
                       title: "Bersih Taman",
-                    ), onPressed: () { Navigator.of(context).pushNamed('/form'); },
+                    ), onPressed: () { Navigator.of(context).pushNamed('/formtaman'); },
                     color: Colors.white,
 
                   ),
@@ -181,7 +181,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: GrabIconMenu(
                       image: "assets/images/newversion/Jalan.png",
                       title: "Bersih Jalan",
-                    ), onPressed: () { Navigator.of(context).pushNamed('/form'); },
+                    ), onPressed: () { Navigator.of(context).pushNamed('/formjalan'); },
                     color: Colors.white,
 
                   ),

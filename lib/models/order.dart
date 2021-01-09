@@ -6,7 +6,7 @@ class Order {
 
 
 
-  Order( this._ordername, this._user, this._price, this._alamat, this._luaslahan, this._jenislayanan, this._flaglogged);
+  Order( this._ordername, this._user, this._price, this._alamat, this._luaslahan, this._jenislayanan);
 
   Order.map(dynamic obj) {
     this._ordername = obj['ordername'];
@@ -15,7 +15,7 @@ class Order {
     this._price = obj['price'];
     this._luaslahan = obj['luaslahan'];
     this._jenislayanan = obj['jenislayanan'];
-    this._flaglogged = obj['password'];
+
   }
 
   String get ordername => _ordername;
@@ -24,7 +24,7 @@ class Order {
   int get price => _price;
   String get luaslahan => _luaslahan;
   String get jenislayanan => _jenislayanan;
-  String get flaglogged => _flaglogged;
+
 
   Map<String, dynamic> toMap() {
     var map = new Map<String, dynamic>();
@@ -34,7 +34,6 @@ class Order {
     map["price"] = _price;
     map["luaslahan"] = _luaslahan;
     map["jenislayanan"] = _jenislayanan;
-    map["flaglogged"] = _flaglogged;
     return map;
   }
 }
