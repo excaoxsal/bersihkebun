@@ -30,10 +30,6 @@ class HomeState extends State<Home> {
         title: Text('Daftar Data-Data'),
       ),
       body: createListView(),
-
-      if(a==1){
-      updateListView()
-    }
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         tooltip: 'Tambah Data',
@@ -59,6 +55,7 @@ class HomeState extends State<Home> {
 
   ListView createListView() {
     TextStyle textStyle = Theme.of(context).textTheme.subhead;
+    updateListView();
     return ListView.builder(
       itemCount: count,
       itemBuilder: (BuildContext context, int index) {
@@ -76,6 +73,7 @@ class HomeState extends State<Home> {
               child: Icon(Icons.delete),
               onTap: () {
                 deleteContact(contactList[index]);
+                updateListView();
               },
             ),
             onTap: () async {
