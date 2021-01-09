@@ -49,13 +49,13 @@ class DatabaseHelper {
   void _onCreate(Database db, int version) async {
     await db.execute(
         "CREATE TABLE User(id INTEGER PRIMARY KEY, name TEXT, username TEXT, password TEXT, flaglogged TEXT)"
-
+        "CREATE TABLE Order(id INTEGER PRIMARY KEY, ordername TEXT, user TEXT, alamat TEXT, price INTEGER, luaslahan TEXT, jenislayanan TEXT ,flaglogged TEXT"
     );
     print("Table is created");
   }
   void _onCreateOrder(Database db, int version) async {
     await db.execute(
-        "CREATE TABLE Order(id INTEGER PRIMARY KEY, ordername TEXT, user TEXT, alamat TEXT, price INTEGER, luaslahan TEXT, jenislayanan TEXT )");
+        "CREATE TABLE Order(id INTEGER PRIMARY KEY, ordername TEXT, user TEXT, alamat TEXT, price INTEGER, luaslahan TEXT, jenislayanan TEXT ,flaglogged TEXT)");
     print("Table is created");
   }
 

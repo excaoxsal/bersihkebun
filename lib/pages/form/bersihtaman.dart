@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:bersihkebun/data/db_order.dart';
+import 'package:bersihkebun/data/database-helper.dart';
 import 'package:bersihkebun/models/order.dart';
 
 class BersihTaman extends StatefulWidget {
@@ -10,10 +10,10 @@ class BersihTaman extends StatefulWidget {
 
 
 class _BersihTamanPageState  extends State<BersihTaman> {
-  final formKey = new GlobalKey<FormState>();
-  String _luaslahan, _jenislayanan, _alamat;
-  String _ordername = "Bersih Taman", _user = "Exca";
-  int _price = 50000;
+
+String _luaslahan, _jenislayanan, _alamat;
+String _ordername = "Bersih Taman", _user = "Exca";
+int _price = 50000;
 
 
   @override
@@ -36,7 +36,7 @@ class _BersihTamanPageState  extends State<BersihTaman> {
       children: <Widget>[
 
         new Form(
-          key: formKey,
+
           child: new Column(
             children: <Widget>[
               new Padding(
@@ -60,6 +60,18 @@ class _BersihTamanPageState  extends State<BersihTaman> {
                   decoration: new InputDecoration(labelText: "Alamat")
                 ),
               ),
+              new Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: new TextFormField(
+
+
+                  decoration: new InputDecoration(
+                    labelText: "Password",
+
+
+                  ),
+                ),
+              )
             ],
           ),
         ),
@@ -82,10 +94,8 @@ class _BersihTamanPageState  extends State<BersihTaman> {
   }
 void _submit(){
     setState(() {
-      final form = formKey.currentState;
-      form.save();
-      var order = new Order( _ordername, _user, _price, _alamat ,_luaslahan, _jenislayanan,);
-      var db = new DB_Order();
+      var order = new Order( _ordername, _user, _price, _alamat ,_luaslahan, _jenislayanan, _alamat);
+      var db = new DatabaseHelper();
       db.saveOrder(order);
       Navigator.of(context).pushNamed("/home");
     });
