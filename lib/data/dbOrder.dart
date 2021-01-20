@@ -85,4 +85,20 @@ class DatabaseHelper {
       return null;
     }
   }
+
+  //list
+  Future<List<Map<String, dynamic>>> select() async {
+    Database db = await this.db;
+    var mapList = await db.query('Pesanan', orderBy: 'user', );
+    return mapList;
+  }
+  Future<List<Order>> getOrderList() async {
+    var orderMapList = await select();
+    int count = orderMapList.length;
+    List<Order> orderList = List<Order>();
+    for (int i=0; i<count; i++) {
+      orderList.add(Order.map(orderMapList[i]));
+    }
+    return orderList;
+  }
 }

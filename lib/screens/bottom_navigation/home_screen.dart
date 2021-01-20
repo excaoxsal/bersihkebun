@@ -12,6 +12,9 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
+  void _history(){
+    Navigator.of(context).pushNamed("/history");
+  }
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
@@ -106,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: GrabIconMenu(
                                 image: "assets/images/pay/pay.png",
                                 title: "Pay",
-                              ), onPressed: () {  },
+                              ), onPressed: _history,
                                 color: Colors.white,
                               ),
                               RaisedButton(

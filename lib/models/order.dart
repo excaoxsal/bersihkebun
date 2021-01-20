@@ -1,7 +1,7 @@
 class Order {
   String _ordername;
   String _user, _luaslahan, _jenislayanan, _alamat;
-  String _flaglogged;
+
   int _price;
 
 
@@ -19,13 +19,39 @@ class Order {
   }
 
   String get ordername => _ordername;
+
+  set ordername(String value) {
+    _ordername = value;
+  }
   String get user => _user;
-  String get alamat => _alamat;
+
+  set user(String value) {
+    _user = value;
+  }
+
+  get luaslahan => _luaslahan;
+
+  set luaslahan(value) {
+    _luaslahan = value;
+  }
+
+  get jenislayanan => _jenislayanan;
+
+  set jenislayanan(value) {
+    _jenislayanan = value;
+  }
+
+  get alamat => _alamat;
+
+  set alamat(value) {
+    _alamat = value;
+  }
+
   int get price => _price;
-  String get luaslahan => _luaslahan;
-  String get jenislayanan => _jenislayanan;
 
-
+  set price(int value) {
+    _price = value;
+  }
   Map<String, dynamic> toMap() {
     var map = new Map<String, dynamic>();
     map["ordername"] = _ordername;
@@ -36,4 +62,6 @@ class Order {
     map["jenislayanan"] = _jenislayanan;
     return map;
   }
+
+
 }

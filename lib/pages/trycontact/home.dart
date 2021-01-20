@@ -27,7 +27,7 @@ class HomeState extends State<Home> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Daftar Data-Data'),
+        title: Text('History Pemesanan'),
       ),
       body: createListView(),
       floatingActionButton: FloatingActionButton(

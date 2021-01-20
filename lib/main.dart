@@ -1,17 +1,14 @@
 import 'package:bersihkebun/pages/form/bersihhalaman.dart';
 import 'package:bersihkebun/pages/form/bersihjalan.dart';
 import 'package:bersihkebun/pages/form/bersihkebun.dart';
-import 'package:bersihkebun/screens/bottom_navigation/home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:bersihkebun/pages/home_page.dart';
 import 'package:bersihkebun/pages/login/login_page.dart';
 import 'package:bersihkebun/pages/login/register.dart';
 import 'package:bersihkebun/screens/bottom_navigation/main_screen.dart';
-import 'package:bersihkebun/screens/login_screen.dart';
-import 'package:bersihkebun/screens/splash_screen.dart';
-import 'package:bersihkebun/screens/verification_screen.dart';
 import 'package:bersihkebun/pages/form/bersihtaman.dart';
-import 'package:bersihkebun/pages/trycontact/home.dart';
+import 'package:bersihkebun/pages/form/historyorder.dart';
+import 'package:bersihkebun/pages/form/historytype02.dart';
+
 
 
 void main() => runApp(MyApp());
@@ -25,7 +22,7 @@ final routes = {
   '/formkebun': (BuildContext context) => new BersihKebun(),
   '/formjalan': (BuildContext context) => new BersihJalan(),
   '/formhalaman': (BuildContext context) => new BersihHalaman(),
-  '/history': (BuildContext context) => new Home(),
+  '/history': (BuildContext context) => new Orders(),
 
 };
 
